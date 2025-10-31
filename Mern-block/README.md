@@ -52,16 +52,16 @@ It is designed for **community-driven blogging** — allowing multiple users to 
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](./frontend/screenshots/Home-1.png)
+![Home Page](./frontend/Screenshots/Home-1.png)
 
 ### 🧑‍💻 Dashboard
 ![Dashboard](./frontend/Screenshots/Dashboard-1.png)
 
 ### 📝 Post View
-![Post View](./frontend/screenshots/post-1.png)
+![Post View](./frontend/Screenshots/post-1.png)
 
 ### ✏️ Create Post
-![Create Post](./frontend/screenshots/create-1.png)
+![Create Post](./frontend/Screenshots/create-1.png)
 
 
 ## 🏗️ System Architecture
@@ -69,39 +69,75 @@ It is designed for **community-driven blogging** — allowing multiple users to 
 ```
 MERN-Blog/
 ├── backend/
+| ├── config
+| | ├── db.js
 │ ├── controllers/
 │ │ └── postController.js
+│ │ └── categoryController.js
+│ │ └── chatController.js
+│ │ └── authController.js
 │ ├── middleware/
 │ │ └── authMiddleware.js
+│ │ └── errorandler.js
+│ │ └── upload.js
 │ ├── models/
 │ │ ├── Post.js
 │ │ ├── User.js
-│ │ └── Comment.js
+│ │ └── Category.js
+│ │ └── Message.js
 │ ├── routes/
 │ │ └── posts.js
+│ │ └── auth.js
+│ │ └── categories.js
+│ │ └── chat.js
+│ ├── scripts/
+| | ├── setPassword.js
 │ ├── uploads/
+│ ├── node_modules/
 │ └── server.js
+│ └── package.json
 │
 ├── frontend/
+| ├── node_modules
 │ ├── src/
 │ │ ├── api/
 │ │ ├── components/
+| | | ├── apiClient.js
+| | | ├── ChatMessage.jsx
+| | | ├── Navbar.jsx
+| | | ├── Pagination.jsx
+| | | ├── PostCard.jsx
+| | | ├── ProtectedRoute.jsx
 │ │ ├── context/
+| | | ├── AuthContext.jsx
 │ │ ├── hooks/
+| | | ├── useApi.js
+│ │ ├── utils/
+| | | ├── formatDate.js
 │ │ ├── pages/
 │ │ │ ├── Home.jsx
 │ │ │ ├── Dashboard.jsx
 │ │ │ └── PostView.jsx
+│ │ │ └── AllPosts.jsx
+│ │ │ └── Chat.jsx
+│ │ │ └── createEditpost.jsx
+│ │ │ └── LandingPage.jsx
+│ │ │ └── Login.jsx
+│ │ │ └── Register.jsx
 │ │ └── App.jsx
 │ ├── public/
 │ └── vite.config.js
 │
 ├── screenshots/
-│ ├── home.png
-│ ├── dashboard.png
-│ ├── post-view.png
-│ └── create-post.png
-│
+│ ├── Home-1.png
+│ ├── Home-2.png
+│ ├── Dashboard-1.png
+│ ├── post-1.png
+│ ├── post-2.png
+│ └── create-1.png
+│ └── create-2.png
+│ └── chat.png
+|
 ├── .env
 ├── .gitignore
 ├── README.md
