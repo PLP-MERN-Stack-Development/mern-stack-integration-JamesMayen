@@ -52,16 +52,16 @@ It is designed for **community-driven blogging** — allowing multiple users to 
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](./screenshots/Home-1.png)
+![Home Page](./frontend/screenshots/Home-1.png)
 
 ### 🧑‍💻 Dashboard
-![Dashboard](./Screenshots/Dashboard-1.png)
+![Dashboard](./frontend/Screenshots/Dashboard-1.png)
 
 ### 📝 Post View
-![Post View](././screenshots/post-1.png)
+![Post View](./frontend/screenshots/post-1.png)
 
 ### ✏️ Create Post
-![Create Post](./screenshots/create-1.png)
+![Create Post](./frontend/screenshots/create-1.png)
 
 
 ## 🏗️ System Architecture
