@@ -1,6 +1,6 @@
-// Post.js - Mongoose model for blog posts
-
-const mongoose = require('mongoose');
+// models/Post.js - Mongoose model for blog posts
+import mongoose from 'mongoose';
+import { type } from 'os';
 
 const PostSchema = new mongoose.Schema(
   {
@@ -50,12 +50,28 @@ const PostSchema = new mongoose.Schema(
       {
         user: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'User',
-        },
+          ref: 'User',},
         content: {
           type: String,
           required: true,
         },
+        likes: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+        replies: [
+          {
+            user: {
+              type: mongoose.Schema.Types.ObjectId, ref: 'User',
+              required: true,
+            },
+            content: {
+              type: String,
+              required: true,
+            },
+            createdAt: {
+              type: Date,
+              default: Date.now,
+            },
+          },
+        ],
         createdAt: {
           type: Date,
           default: Date.now,
@@ -68,15 +84,13 @@ const PostSchema = new mongoose.Schema(
 
 // Create slug from title before saving
 PostSchema.pre('save', function (next) {
-  if (!this.isModified('title')) {
-    return next();
-  }
-  
+  if (!this.isModified('title')) return next();
+
   this.slug = this.title
     .toLowerCase()
     .replace(/[^\w ]+/g, '')
     .replace(/ +/g, '-');
-    
+
   next();
 });
 
@@ -97,4 +111,5 @@ PostSchema.methods.incrementViewCount = function () {
   return this.save();
 };
 
-module.exports = mongoose.model('Post', PostSchema); 
+// Export the model using ES Module syntax
+export default mongoose.model('Post', PostSchema);
