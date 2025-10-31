@@ -66,6 +66,7 @@ It is designed for **community-driven blogging** — allowing multiple users to 
 
 ## 🏗️ System Architecture
 
+```
 MERN-Blog/
 ├── backend/
 │ ├── controllers/
@@ -105,6 +106,8 @@ MERN-Blog/
 ├── .gitignore
 ├── README.md
 └── package.json
+
+```
 
 ---
 
